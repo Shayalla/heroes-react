@@ -1,0 +1,25 @@
+li {
+    border: 2px solid var(--cor-vermelha-principal);
+    background-color: red;
+    width: 10%;
+    margin: 10px;
+    height: 160px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;
+}
+
+li:hover {
+  animation: c-glowing-blue 0.3s ease-in-out infinite;
+  animation-direction: alternate;
+  transform: scale(1.07);
+  z-index: 2;
+}
+
+li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}

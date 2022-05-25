@@ -1,0 +1,8 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+}
