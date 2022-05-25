@@ -9,7 +9,9 @@ function HeroCard({ name, images }) {
   return (
     <li>
       <img src={ images.sm } alt="" />
-      {name}
+      <span>
+        {name}
+      </span>
     </li>
   )
 }
