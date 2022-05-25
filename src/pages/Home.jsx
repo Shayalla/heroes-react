@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import HeroCard from '../components/HeroCard/HeroCard';
 import getAllCharacter from '../services/getCharacter';
+import './Home.css';
 
 function Home() {
   const [char, setChar] = useState([]);
@@ -11,15 +13,11 @@ function Home() {
     }
     getHeroes();
   }, []);
-  console.log(char);
   return (
     <>
       <ul>
-        {char.map((char) => (
-          <li key={char.id}>
-            <img src={ char.images.sm } alt="" />
-            {char.name}
-          </li>
+        {char.map(({ id, name, images }) => (
+          <HeroCard key={id} name={name} images={images} />
         ))}
       </ul>
     </>
