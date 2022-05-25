@@ -1,18 +1,17 @@
 li {
     border: 2px solid var(--cor-vermelha-principal);
-    background-color: red;
     width: 10%;
     margin: 10px;
     height: 160px;
     cursor: pointer;
-    z-index: 2;
+    /* z-index: 2; */
     border-radius: 5px;
     position: relative;
     transition: 0.15s ease-in-out;
 }
 
 li:hover {
-  animation: c-glowing-blue 0.3s ease-in-out infinite;
+  animation: c-glowing-red 0.3s ease-in-out infinite;
   animation-direction: alternate;
   transform: scale(1.07);
   z-index: 2;
@@ -22,4 +21,15 @@ li img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+}
+
+li span {
+  display: flex;
+  position: absolute;
+  background-color: rgba(0,0,0,0.6);
+  color:#fff;
+  text-align: center;
+  bottom: 0;
+  line-height: 30px;
+  z-index: 3;
 }
