@@ -3,16 +3,22 @@ import HeroCard from '../HeroCard/HeroCard';
 import Context from '../../context/Context';
 
 function HeroList() {
-  const { char, setChar, search } = useContext(Context);
+  const { char, setChar, search, loading } = useContext(Context);
 
   useEffect(() => {
-    const hero = char.filter(({name}) => name.includes(search.name))
-    setChar(hero)
+    if (search.name){
+      const hero = char.filter(({name}) => name.includes(search.name));
+      setChar(hero);
+    }
+    if (search.publisher) {
+      const hero = char.filter(({ biography: { publisher } }) => publisher === search.publisher);
+      setChar(hero);
+    }
     console.log('char', char);
-    console.log('search', );
+    console.log('search', search);
   }, [search, setChar])
 
-  return (
+  return loading ? <p>Carregando...</p> :(
     <ul>
       {
         char.map(({ id, name, images }) => (

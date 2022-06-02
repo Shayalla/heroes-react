@@ -7,7 +7,7 @@ function Provider({ children }) {
   const [char, setChar] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
-
+  
   const getHeroes = async () => {
     const heroes = await getAllCharacter();
     setChar(heroes);
